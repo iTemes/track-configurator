@@ -7,8 +7,14 @@ const routes = [
     component: () => import("../views/FirstStepView.vue"),
   },
   {
-    path: "/about",
+    path: "/secondStep",
     name: "about",
+
+    component: () => import("../views/SecondStepView.vue"),
+  },
+  {
+    path: "/thirdStep",
+    name: "thirdStep",
 
     component: () => import("../views/SecondStepView.vue"),
   },

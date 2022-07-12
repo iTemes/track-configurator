@@ -42,6 +42,16 @@ body {
   min-height: 100vh;
 }
 
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  > main {
+    flex-grow: 1;
+  }
+}
+
 .visually-hidden {
   position: absolute !important;
 
@@ -56,17 +66,9 @@ body {
   overflow: hidden;
 }
 
-.configurator-step {
-  padding-bottom: 100px;
-}
-
-.container--main {
-  margin-top: 50px;
-}
 .danger {
   color: $danger;
 }
-
 img {
   display: block;
   max-width: 100%;
