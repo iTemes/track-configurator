@@ -1,6 +1,12 @@
+<script setup>
+import PageHeader from "../PageHeader/PageHeader.vue";
+</script>
+
 <template>
-  <div class="container mx-auto">
-    <slot name="header" />
+  <div>
+    <slot name="header">
+      <PageHeader />
+    </slot>
     <slot name="main" />
     <slot name="footer" />
   </div>

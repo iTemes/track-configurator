@@ -19,14 +19,14 @@ $container-max-widths: (
 $component-active-bg: #000;
 
 // IMPORT SECTION
-@import "node_modules/bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
-@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
-@import "node_modules/bootstrap/scss/bootstrap-grid.scss"; // Optional Bootstrap Grid
-@import "node_modules/bootstrap/scss/_variables.scss"; // Optional Bootstrap variable
-@import "node_modules/bootstrap/scss/_tables.scss"; // Optional Bootstrap table
-@import "node_modules/bootstrap/scss/_buttons.scss"; // Optional Bootstrap buttons
-@import "node_modules/bootstrap/scss/_modal.scss"; // Optional Bootstrap modal
-@import "node_modules/bootstrap/scss/_tooltip.scss"; // Optional Bootstrap tooltip
-@import "node_modules/bootstrap/scss/_forms.scss"; // Optional Bootstrap forms
-@import "node_modules/bootstrap/scss/_close.scss"; // Optional Bootstrap close
-@import "node_modules/bootstrap/scss/_toasts.scss"; // Optional Bootstrap close
+@import "~bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
+@import "~bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
+@import "~bootstrap/scss/bootstrap-grid.scss"; // Optional Bootstrap Grid
+@import "~bootstrap/scss/_variables.scss"; // Optional Bootstrap variable
+@import "~bootstrap/scss/_tables.scss"; // Optional Bootstrap table
+@import "~bootstrap/scss/_buttons.scss"; // Optional Bootstrap buttons
+@import "~bootstrap/scss/_modal.scss"; // Optional Bootstrap modal
+@import "~bootstrap/scss/_tooltip.scss"; // Optional Bootstrap tooltip
+@import "~bootstrap/scss/_forms.scss"; // Optional Bootstrap forms
+@import "~bootstrap/scss/_close.scss"; // Optional Bootstrap close
+@import "~bootstrap/scss/_toasts.scss"; // Optional Bootstrap close

@@ -1,0 +1,35 @@
+.table {
+    tbody > tr.table__headline > th {
+        padding: 0.5rem 0 0;
+        padding-top: 1.75rem;
+
+        @include media-breakpoint-down(md) {
+            font-size: 0.8rem;
+        }
+    }
+
+   
+    @include media-breakpoint-down(md) {
+        th {
+            font-size: 0.75rem;
+        }
+    
+        td {
+            font-size: 0.7rem;
+            max-width: 100px;
+            min-width: 75px;
+        }
+
+        thead th:first-child {
+            min-width: 170px;
+        }
+
+        thead th:last-child {
+           text-align: right;
+        }
+
+        &__title {
+            font-size: 0.75rem;
+        }
+    }
+}
