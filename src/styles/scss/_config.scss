@@ -1,0 +1,32 @@
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px;
+$gutter: $grid-gutter-width;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 540px,
+  md: 720px,
+  lg: 1024px,
+  xl: 1440px,
+  xxl: 1800px,
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 1024px,
+  xl: 1440px,
+  xxl: 1800px,
+);
+$component-active-bg: #000;
+
+// IMPORT SECTION
+@import "node_modules/bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss"; // Optional Bootstrap Grid
+@import "node_modules/bootstrap/scss/_variables.scss"; // Optional Bootstrap variable
+@import "node_modules/bootstrap/scss/_tables.scss"; // Optional Bootstrap table
+@import "node_modules/bootstrap/scss/_buttons.scss"; // Optional Bootstrap buttons
+@import "node_modules/bootstrap/scss/_modal.scss"; // Optional Bootstrap modal
+@import "node_modules/bootstrap/scss/_tooltip.scss"; // Optional Bootstrap tooltip
+@import "node_modules/bootstrap/scss/_forms.scss"; // Optional Bootstrap forms
+@import "node_modules/bootstrap/scss/_close.scss"; // Optional Bootstrap close
+@import "node_modules/bootstrap/scss/_toasts.scss"; // Optional Bootstrap close

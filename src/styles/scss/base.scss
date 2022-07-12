@@ -1,0 +1,74 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("../../assets/fonts/Montserrat-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: BellGothic;
+  src: url("../../assets/fonts/BellGothicStd-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: BellGothic;
+  src: url("../../assets/fonts/BellGothicStd-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: BellGothic;
+  src: url("../../assets/fonts/BellGothicStd-Black.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  font-family: Montserrat, $systemfont;
+  color: $textcolor;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-height: 100vh;
+}
+
+.visually-hidden {
+  position: absolute !important;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.configurator-step {
+  padding-bottom: 100px;
+}
+
+.container--main {
+  margin-top: 50px;
+}
+.danger {
+  color: $danger;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
