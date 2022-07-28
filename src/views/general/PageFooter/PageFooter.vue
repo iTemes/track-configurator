@@ -1,5 +1,12 @@
 <script setup>
-defineProps({
+import { useRouter } from "vue-router";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+const router = useRouter();
+
+const props = defineProps({
   enableNext: {
     type: Boolean,
     default: false,
@@ -17,10 +24,26 @@ defineProps({
   finished: {
     type: Boolean,
     default: false,
+    requared: false,
   },
 });
 
-let mountingFromStore = false;
+const emit = defineEmits(["resetStep"]);
+
+const systemColor = computed(() => store.state.system.systemParams.color);
+const systemMounting = computed(() => store.state.system.systemParams.mounting);
+const systemControlPlace = computed(
+  () => store.state.system.systemParams.mounting
+);
+
+const pushTo = (evt) => {
+  evt.preventDefault();
+  router.push(props.link);
+};
+
+const resetStep = () => {
+  emit("resetStep");
+};
 </script>
 <template>
   <footer class="page-footer noprint">
@@ -30,14 +53,12 @@ let mountingFromStore = false;
       <div class="config-result">
         <div>
           <b>{{ $t("footer.yourConfig") }}:</b>
-          <p class="config-result__text" v-if="mountingFromStore">
+          <p class="config-result__text" v-if="systemMounting">
             {{ $t("message.embedding") }} -
-            {{ $t(`message.${mountingFromStore}`) }},
-            {{ $t("message.supply") }} - {{ $t(`message.${placeFromStore}`) }},
-            {{ $t("message.controlling") }} -
-            {{ $t(`message.${typeFromStore}`) }},
-            <template v-if="colorFromStore">
-              - {{ $t(`message.${colorFromStore}`) }}.
+            {{ $t(`message.${systemMounting}`) }}, {{ $t("message.supply") }} -
+            {{ $t(`message.${systemControlPlace}`) }},
+            <template v-if="systemColor">
+              - {{ $t(`message.${systemColor}`) }}.
             </template>
           </p>
         </div>
@@ -55,8 +76,7 @@ let mountingFromStore = false;
           {{ $t("message.reset") }}
         </button>
         <button
-          class="btn btn-light"
-          :class="{ 'btn-dark': enableNext }"
+          :class="{ 'btn btn-light': true, 'btn-dark': enableNext }"
           type="submit"
           @click="pushTo($event)"
           :disabled="!enableNext"
@@ -92,6 +112,10 @@ let mountingFromStore = false;
 
   p {
     margin: 0;
+  }
+
+  button + button {
+    margin-left: 10px;
   }
 
   .config-result {

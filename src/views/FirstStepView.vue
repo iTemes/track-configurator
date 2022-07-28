@@ -76,20 +76,27 @@ const formFields = [
   },
 ];
 
-const colorFromStore = computed(() => store.state.system.systemParams.color);
-const mountingFromStore = computed(
+const systemColor = computed(() => store.state.system.systemParams.color);
+const systemMounting = computed(() => store.state.system.systemParams.mounting);
+const systemControlPlace = computed(
   () => store.state.system.systemParams.mounting
 );
 
 const previewPhoto = computed(() => {
-  if (!mountingFromStore.value || !colorFromStore.value) return false;
-  return `${START_IMAGE_PATH}/${mountingFromStore.value}_${colorFromStore.value}.jpg`;
+  if (!systemMounting.value || !systemColor.value) return false;
+  return `${START_IMAGE_PATH}/${systemMounting.value}_${systemColor.value}.jpg`;
 });
 
 const previewSchema = computed(() => {
-  if (!mountingFromStore.value) return false;
-  return `${START_IMAGE_PATH}/${mountingFromStore.value}_shema.svg`;
+  if (!systemMounting.value) return false;
+  return `${START_IMAGE_PATH}/${systemMounting.value}_shema.svg`;
 });
+
+const nextStep = computed(() => {
+  return systemControlPlace.value && systemMounting.value && systemColor.value;
+});
+
+const resetStep = () => store.dispatch("system/resetSystemParams");
 </script>
 
 <template>
@@ -120,7 +127,11 @@ const previewSchema = computed(() => {
     </template>
 
     <template #footer>
-      <PageFooter link="/secondStep" />
+      <PageFooter
+        :enable-next="nextStep"
+        @reset-step="resetStep"
+        link="/secondStep"
+      />
     </template>
   </PageTemplateVue>
 </template>
