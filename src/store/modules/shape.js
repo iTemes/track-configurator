@@ -1,10 +1,10 @@
-import { UPDATE_SHAPE } from "../mutation-types";
+import { UPDATE_SHAPE, UPDATE_SIDES, UPDATE_LENGTH } from "../mutation-types";
 
 const state = {
   shape: null,
   sides: null,
-  total_length: 0,
-  total_tracks: 0,
+  totalLength: 0,
+  totalTracks: 0,
 };
 
 // getters
@@ -15,6 +15,12 @@ const mutations = {
   [UPDATE_SHAPE](state, shape) {
     state.shape = shape;
   },
+  [UPDATE_SIDES](state, sides) {
+    state.sides = sides;
+  },
+  [UPDATE_LENGTH](state, length) {
+    state.totalLength = length;
+  },
 };
 
 // actions
@@ -22,8 +28,12 @@ const actions = {
   updateShape({ commit }, value) {
     commit(UPDATE_SHAPE, value);
   },
-  resetShape({ commit }) {
-    commit(UPDATE_SHAPE, null);
+  updateSides({ commit }, value) {
+    console.log("UPDATE_SIDES", value);
+    commit(UPDATE_SIDES, value);
+  },
+  updateLength({ commit }, value) {
+    commit(UPDATE_LENGTH, value);
   },
 };
 

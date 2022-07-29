@@ -11,6 +11,8 @@ export const VER_TYPE = "VER";
 export const VER_TYPE_REVERS = "VER-REVERS";
 export const HOR_TYPE = "HOR";
 export const HOR_TYPE_REVERS = "HOR-REVERS";
+export const SUSPENDED = "suspended";
+export const SHAPE_SQUARE = "shape-square";
 /* Наименования БП для корзины */
 export const POWER_SUPPLY = {
   surface_supply: [
