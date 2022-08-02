@@ -43,6 +43,15 @@ const isAddTrackEnable = computed(() => {
   }
   return shape.value;
 });
+
+const nextStep = computed(() => {
+  if (!sidesForTabs.value) {
+    return false;
+  }
+  return Object.entries(sidesForTabs.value).every(
+    ([, value]) => value.side_total_tracks
+  );
+});
 </script>
 <template>
   <PageTemplateVue>
@@ -76,6 +85,13 @@ const isAddTrackEnable = computed(() => {
           :is-power-adaptor="isPowerAdaptor"
         />
       </div>
+    </template>
+    <template #footer>
+      <PageFooter
+        :enable-next="nextStep"
+        @reset-step="resetStep"
+        link="/secondStep"
+      />
     </template>
   </PageTemplateVue>
 </template>
