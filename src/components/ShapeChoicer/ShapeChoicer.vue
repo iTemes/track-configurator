@@ -2,14 +2,13 @@
 import { computed, onMounted, reactive, watch } from "vue";
 import { useStore } from "vuex";
 
-import { SHAPE, MIN_SIZE, SHAPE_SQUARE, SUSPENDED } from "@/utils/constans";
+import { SHAPE, MIN_SIZE, SUSPENDED } from "@/utils/constans";
 
 const state = reactive({
   corners: 0,
   stubs: 0,
   customValue: null,
   minSize: MIN_SIZE,
-  currentSide: null,
 });
 
 const store = useStore();
@@ -57,24 +56,6 @@ const sidesFromStore = computed({
     store.dispatch("shape/updateSides", value);
   },
 });
-const sidesForTabs = computed(() => {
-  if (shape.value === SHAPE_SQUARE) {
-    const sidesForSqare = Object.keys(sidesForTabs.value)
-      .filter((side) => {
-        return (
-          sidesForTabs.value[side].title === "sideC" ||
-          sidesForTabs.value[side].title === "sideD"
-        );
-      })
-      .reduce((res, key) => {
-        res[key] = sidesForTabs.value[key];
-        return res;
-      }, {});
-    return sidesForSqare;
-  }
-
-  return sidesForTabs.value;
-});
 
 onMounted(() => {
   if (shape.value) {
@@ -83,7 +64,7 @@ onMounted(() => {
     state.corners = corners;
     !sidesFromStore.value && (sidesFromStore.value = sides);
 
-    state.currentSide = Object.keys(sidesFromStore.value)[0];
+    // state.currentSide = Object.keys(sidesFromStore.value)[0];
   }
 });
 
@@ -98,7 +79,7 @@ watch(
     state.stubs = stubs;
 
     // eslint-disable-next-line prefer-destructuring
-    state.currentSide = Object.keys(sidesFromStore.value)[0];
+    // state.currentSide = Object.keys(sidesFromStore.value)[0];
 
     totalLength.value = 0;
   }

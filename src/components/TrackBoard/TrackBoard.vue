@@ -1,12 +1,13 @@
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted, reactive } from "vue";
 import { useStore } from "vuex";
 import { useI18n } from "vue-i18n";
 
-import { MAX_LENGTH, TRACK_SIZE, SHAPE_SQUARE } from "../utils/constans";
+import { Tabs, Tab } from "vue3-tabs-component";
+
+import { MAX_LENGTH, TRACK_SIZE, SHAPE_SQUARE } from "@/utils/constans";
 
 const store = useStore();
-
 const { t } = useI18n();
 
 defineProps({
@@ -15,11 +16,6 @@ defineProps({
     requared: true,
     default: false,
   },
-  currentSide: {
-    type: Object,
-    requared: true,
-    default: () => {},
-  },
   sidesForTabs: {
     type: Object,
     requared: true,
@@ -27,7 +23,9 @@ defineProps({
   },
 });
 
-const emit = defineEmits["onSelectTab"];
+const state = reactive({
+  currentSide: null,
+});
 
 const sidesFromStore = computed(() => store.state.shape.sides);
 const shape = computed(() => store.state.shape.shape);
@@ -43,9 +41,12 @@ const totalLength = computed({
 });
 const remainsLengthSystem = computed(() => MAX_LENGTH - totalLength.value);
 
-const handleSelectTab = (e, index) => {
-  const selectedTab = Object.keys(sidesFromStore.value)[index];
-  emit("onSelectTab", selectedTab);
+const handleSelectTab = (selectedTab) => {
+  console.log("selectedTab", selectedTab.tab.index);
+  const selectedTabObject = Object.keys(sidesFromStore.value)[
+    selectedTab.tab.index
+  ];
+  state.currentSide = selectedTabObject;
 };
 
 const enterTrackSize = () => {
@@ -200,20 +201,29 @@ function trackLengthClass(value) {
   }
   return "big";
 }
+
+onMounted(() => {
+  state.currentSide = null;
+});
 </script>
 
 <template>
   <fieldset v-if="isAddTrackEnable" class="form-group">
     <legend class="form-head">
-      {{ $tc("message.addTracks", 2) }}
+      {{ t("message.addTracks", 2) }}
     </legend>
-    <div class="tracks mb-5" v-if="false">
-      <!-- Nav tabs -->
-      <tabs :on-select="handleSelectTab" class="my-tabs">
+    <div class="tracks mb-5">
+      <tabs
+        :options="{ useUrlFragment: false }"
+        cache-lifetime="0"
+        @changed="handleSelectTab"
+        nav-class="my-tabs"
+        nav-item-class="tab-item"
+      >
         <tab
           v-for="(side, name) in sidesForTabs"
           :key="side.name"
-          :title="$t(`tabs.${name}`)"
+          :name="t(`tabs.${name}`)"
         >
           <div class="tracks__config d-flex align-items-center">
             <div class="tracks__buttons d-flex" ref="tracksButtons">
@@ -310,7 +320,7 @@ function trackLengthClass(value) {
             </div>
           </div>
           <div class="tracks__overview" ref="tracksOverview">
-            <small v-if="side.tracks.length">{{ $t("message.topView") }}</small>
+            <small v-if="side.tracks.length">{{ t("message.topView") }}</small>
             <img
               class="side-image mr-3"
               style="max-height: 140px"
@@ -374,14 +384,8 @@ function trackLengthClass(value) {
                 </button>
               </div>
               <!-- eslint-enable -->
-              <div
-                v-if="!side.tracks.length"
-                class="track track--placeholder"
-                @click="showBtnsTooltip()"
-              >
-                <span class="track__item">{{
-                  $tc("message.addTracks", 1)
-                }}</span>
+              <div v-if="!side.tracks.length" class="track track--placeholder">
+                <span class="track__item">{{ t("message.addTracks", 1) }}</span>
               </div>
             </div>
           </div>
@@ -395,8 +399,32 @@ function trackLengthClass(value) {
   </fieldset>
 </template>
 
+<style>
+.my-tabs {
+  display: flex;
+  margin-bottom: 0px;
+
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+.tab-item {
+  padding: 5px 10px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+}
+.tab-item a {
+  text-decoration: none;
+  color: #000;
+}
+.tab-item.is-active {
+  background-color: #d6d6d6;
+}
+</style>
+
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
