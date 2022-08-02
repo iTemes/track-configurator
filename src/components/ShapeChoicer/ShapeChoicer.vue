@@ -44,7 +44,6 @@ const shape = computed({
     return store.state.shape.shape;
   },
   set(value) {
-    console.log("update shape", value);
     updateShape(value);
   },
 });

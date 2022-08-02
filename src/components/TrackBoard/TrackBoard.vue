@@ -1,9 +1,10 @@
 <script setup>
-import { computed, onMounted, reactive } from "vue";
+import { computed, onMounted, reactive, ref } from "vue";
 import { useStore } from "vuex";
 import { useI18n } from "vue-i18n";
 
 import { Tabs, Tab } from "vue3-tabs-component";
+import { Modal } from "bootstrap";
 
 import { MAX_LENGTH, TRACK_SIZE, SHAPE_SQUARE } from "@/utils/constans";
 
@@ -25,7 +26,11 @@ defineProps({
 
 const state = reactive({
   currentSide: null,
+  customValue: 0,
+  customSizeModal: null,
 });
+
+const sizeModal = ref(null);
 
 const sidesFromStore = computed(() => store.state.shape.sides);
 const shape = computed(() => store.state.shape.shape);
@@ -42,7 +47,6 @@ const totalLength = computed({
 const remainsLengthSystem = computed(() => MAX_LENGTH - totalLength.value);
 
 const handleSelectTab = (selectedTab) => {
-  console.log("selectedTab", selectedTab.tab.index);
   const selectedTabObject = Object.keys(sidesFromStore.value)[
     selectedTab.tab.index
   ];
@@ -50,11 +54,11 @@ const handleSelectTab = (selectedTab) => {
 };
 
 const enterTrackSize = () => {
-  console.log("Show modal custom");
+  state.customSizeModal.show();
 };
 
 function calcSideTracksCount(trackLenght) {
-  Math.ceil(trackLenght / TRACK_SIZE);
+  return Math.ceil(trackLenght / TRACK_SIZE);
 }
 function calcSideConnectors(sideTracks) {
   const connectors = sideTracks - 1;
@@ -82,6 +86,7 @@ function handleAddTrackButton(side, event) {
 // TODO CUSTOM TRACK
 //eslint-disable-next-line
 function handleAddCustomTrack(side, trackSize) {
+  console.log("add track to side", trackSize);
   let tracksCount = Math.floor(trackSize / TRACK_SIZE);
   const tracksCut = trackSize % TRACK_SIZE;
 
@@ -92,9 +97,12 @@ function handleAddCustomTrack(side, trackSize) {
   if (tracksCut > 50) {
     addTrackToSide(side, tracksCut);
   }
-  // addTrackToSide(side, trackSize);
-  // customSizeModal.hide();
+  addTrackToSide(side, trackSize);
+  state.customSizeModal.hide();
 }
+const updatecustomValue = ({ target: { value } }) => {
+  state.customValue = value > TRACK_SIZE ? TRACK_SIZE : +value;
+};
 function configTrack(side, trackLenght) {
   const sideToConfig = sidesFromStore.value[side];
   const newTrack = {
@@ -122,37 +130,6 @@ function configTrack(side, trackLenght) {
 
   totalLength.value += trackLenght;
 }
-function addTrackToSide(side, trackLenght) {
-  configTrack(side, trackLenght);
-  duplicateTrack(side, trackLenght);
-}
-function duplicateTrack(side, trackLenght) {
-  if (sidesFromStore.value !== SHAPE_SQUARE) {
-    return;
-  }
-  let mirrorSide;
-  switch (side) {
-    case "side_A":
-      mirrorSide = "side_C";
-      break;
-    case "side_B":
-      mirrorSide = "side_D";
-      break;
-    default:
-      break;
-  }
-  configTrack(mirrorSide, trackLenght);
-}
-function handleRemoveTrack(side, index, event) {
-  const parent = event.target.closest(".track");
-  parent.classList.add("for-remove");
-
-  removeTrack(side, index);
-  removeMirrorTrack(side, index);
-  setTimeout(() => {
-    parent.classList.remove("for-remove");
-  }, 300);
-}
 function removeTrack(side, index) {
   const sideToConfig = sidesFromStore.value[side];
   const { tracks } = sideToConfig;
@@ -174,23 +151,29 @@ function removeTrack(side, index) {
     });
   }, 300);
 }
+function addTrackToSide(side, trackLenght) {
+  configTrack(side, trackLenght);
+  duplicateTrack(side, trackLenght);
+}
+function duplicateTrack(side, trackLenght) {
+  if (shape.value !== SHAPE_SQUARE) {
+    return;
+  }
+  const mirrorSide = side === "side_A" ? "side_C" : "side_D";
+  configTrack(mirrorSide, trackLenght);
+}
+function handleRemoveTrack(side, index) {
+  removeTrack(side, index);
+  removeMirrorTrack(side, index);
+}
 function removeMirrorTrack(side, index) {
   if (shape.value !== SHAPE_SQUARE) {
     return;
   }
-  let mirrorSide;
-  switch (side) {
-    case "side_A":
-      mirrorSide = "side_C";
-      break;
-    case "side_B":
-      mirrorSide = "side_D";
-      break;
-    default:
-      break;
-  }
 
-  this.removeTrack(mirrorSide, index);
+  const mirrorSide = side === "side_A" ? "side_C" : "side_D";
+
+  removeTrack(mirrorSide, index);
 }
 function trackLengthClass(value) {
   if (value <= 1000) {
@@ -204,6 +187,7 @@ function trackLengthClass(value) {
 
 onMounted(() => {
   state.currentSide = null;
+  state.customSizeModal = new Modal(sizeModal.value);
 });
 </script>
 
@@ -397,6 +381,59 @@ onMounted(() => {
       </span>
     </div>
   </fieldset>
+  <!-- Modal -->
+  <div
+    ref="sizeModal"
+    class="modal fade"
+    id="sizeModal"
+    tabindex="-1"
+    aria-labelledby="sizeModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="sizeModalLabel">Введите длинну трека</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          />
+        </div>
+        <div class="modal-body">
+          <input
+            :value="customValue"
+            @input="updatecustomValue"
+            min="200"
+            max="2500"
+            type="number"
+            name="customValue"
+            step="100"
+            placeholder="200-2500"
+            id="customValue"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Отмена
+          </button>
+          <button
+            :disabled="customValue < minSize"
+            @click="handleAddCustomTrack(state.currentSide, state.customValue)"
+            type="button"
+            class="btn btn-dark"
+          >
+            Добавить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style>

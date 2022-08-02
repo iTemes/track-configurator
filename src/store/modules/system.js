@@ -58,7 +58,6 @@ const actions = {
     commit(UPDATE_SYSTEM_PARAMETER, payload);
   },
   resetSystemParams({ dispatch }) {
-    console.log("");
     dispatch("updateColor", null);
     dispatch("updateMounting", null);
     dispatch("updateControlPlace", null);

@@ -2,7 +2,10 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 
+import { useI18n } from "vue-i18n";
 import FormInput from "../FormInput/FormInput.vue";
+
+const { t } = useI18n();
 
 const store = useStore();
 
@@ -40,7 +43,7 @@ const valueFromStore = computed({
 <template>
   <fieldset v-if="valueFromStore !== underfined" class="form-group mb-5">
     <legend class="form-head">
-      {{ $t(`message.${title}`) }}
+      {{ t(`message.${title}`) }}
     </legend>
     <div class="row radio-group">
       <div
@@ -73,7 +76,7 @@ const valueFromStore = computed({
             value="recessed"
           />
           <span class="custom-checkbox" />
-          <span>{{ $t("message.recessed") }}</span>
+          <span>{{ t("message.recessed") }}</span>
         </label>
       </div>
       <div
@@ -90,7 +93,7 @@ const valueFromStore = computed({
             value="surface"
           />
           <span class="custom-checkbox" />
-          <span>{{ $t("message.surface") }}</span>
+          <span>{{ t("message.surface") }}</span>
         </label>
       </div>
       <div
@@ -107,7 +110,7 @@ const valueFromStore = computed({
             value="suspended"
           />
           <span class="custom-checkbox" />
-          <span>{{ $t("message.suspended") }}</span>
+          <span>{{ t("message.suspended") }}</span>
         </label>
       </div>
       <div
@@ -124,7 +127,7 @@ const valueFromStore = computed({
             value="stretch-ceiling"
           />
           <span class="custom-checkbox" />
-          <span>{{ $t("message.stretch-ceiling") }}</span>
+          <span>{{ t("message.stretch-ceiling") }}</span>
         </label>
       </div>
     </div>

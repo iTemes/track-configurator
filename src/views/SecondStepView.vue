@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 
 import PageTemplateVue from "./general/PageTemplate/PageTemplate.vue";
+import PageFooter from "./general/PageFooter/PageFooter.vue";
 import ShapeChoicerVue from "@/components/ShapeChoicer/ShapeChoicer.vue";
 import TrackBoard from "@/components/TrackBoard/TrackBoard.vue";
 
@@ -20,11 +21,12 @@ const sidesFromStore = computed(() => store.state.shape.sides);
 
 const sidesForTabs = computed(() => {
   if (shape.value === SHAPE_SQUARE) {
+    //if SHAPE_SQUARE make 2 tabs to mirror
     const sidesForSqare = Object.keys(sidesFromStore.value)
       .filter((side) => {
         return (
-          sidesFromStore.value[side].title === "sideC" ||
-          sidesFromStore.value[side].title === "sideD"
+          sidesFromStore.value[side].title !== "sideC" &&
+          sidesFromStore.value[side].title !== "sideD"
         );
       })
       .reduce((res, key) => {
@@ -90,7 +92,7 @@ const nextStep = computed(() => {
       <PageFooter
         :enable-next="nextStep"
         @reset-step="resetStep"
-        link="/secondStep"
+        link="/thirdstep"
       />
     </template>
   </PageTemplateVue>

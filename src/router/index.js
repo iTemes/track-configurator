@@ -16,7 +16,7 @@ const routes = [
     path: "/thirdStep",
     name: "thirdStep",
 
-    component: () => import("../views/SecondStepView.vue"),
+    component: () => import("../views/ThirdStepView.vue"),
   },
 ];
 

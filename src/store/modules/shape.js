@@ -29,7 +29,6 @@ const actions = {
     commit(UPDATE_SHAPE, value);
   },
   updateSides({ commit }, value) {
-    console.log("UPDATE_SIDES", value);
     commit(UPDATE_SIDES, value);
   },
   updateLength({ commit }, value) {
