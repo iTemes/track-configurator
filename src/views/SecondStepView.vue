@@ -60,16 +60,13 @@ const nextStep = computed(() => {
 
 const resetStep = () => {
   const sidesKeys = Object.keys(sidesFromStore.value);
-  console.log("sidesKeys", sidesKeys);
   sidesKeys.forEach((side) => {
     sidesFromStore.value[side].tracks = [];
     sidesFromStore.value[side].side_total_length = 0;
     sidesFromStore.value[side].side_total_tracks = 0;
   });
 
-  store.dispatch("shape/updateSides", null);
-  store.dispatch("shape/updateShape", null);
-  store.dispatch("shape/updateLength", 0);
+  store.dispatch("shape/resetShape");
 
   store.dispatch("shape/setShapeOnStorage");
 };

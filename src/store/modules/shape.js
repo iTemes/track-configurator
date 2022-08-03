@@ -105,6 +105,13 @@ const actions = {
     commit(UPDATE_SIDES, sides);
     commit(UPDATE_SHAPE, value);
   },
+  resetShape({ commit }) {
+    commit(UPDATE_STUBS, 0);
+    commit(UPDATE_CORNERS, 0);
+    commit(UPDATE_LENGTH, 0);
+    commit(UPDATE_SIDES, null);
+    commit(UPDATE_SHAPE, null);
+  },
   updateSides({ commit }, value) {
     commit(UPDATE_SIDES, value);
   },
@@ -119,7 +126,6 @@ const actions = {
     sessionStorage.setItem("shape", stringifyShape);
   },
   setAccsessoriesToStorage({ state, getters, rootGetters }) {
-    console.log("rootGetters", rootGetters);
     const accsessoriesObject = {
       total_container_for_tracks: getters.totalContainerForTracks,
       total_suspension: getters.totalSuspension,
@@ -131,7 +137,7 @@ const actions = {
       is_smart_light: state.isSmartLight,
       is_power_adaptor: rootGetters["system/isPowerAdaptor"],
     };
-    console.log("accsessoriesObject", accsessoriesObject);
+
     const stringifyAccsessories = JSON.stringify(accsessoriesObject);
     sessionStorage.setItem("accessories", stringifyAccsessories);
   },

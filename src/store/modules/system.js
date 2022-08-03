@@ -4,6 +4,7 @@ import {
   UPDATE_CONTROL_PLACE,
   UPDATE_SYSTEM_PARAMETER,
   UPDATE_SUSPENSION_TYPE,
+  UPDATE_POWER_SUPPLY,
 } from "../mutation-types";
 
 import { EXTERNAL_CONTROL } from "@/utils/constans";
@@ -15,6 +16,7 @@ const state = {
     controlPlace: null,
     suspensionType: null,
   },
+  powerSupply: null,
 };
 
 // getters
@@ -44,6 +46,9 @@ const mutations = {
       state.systemParams[parameter] = value;
     }
   },
+  [UPDATE_POWER_SUPPLY](state, power) {
+    state.powerSupply = power;
+  },
 };
 
 // actions
@@ -67,6 +72,9 @@ const actions = {
     dispatch("updateColor", null);
     dispatch("updateMounting", null);
     dispatch("updateControlPlace", null);
+  },
+  updatePowerSupply({ commit }, supply) {
+    commit(UPDATE_POWER_SUPPLY, supply);
   },
 };
 

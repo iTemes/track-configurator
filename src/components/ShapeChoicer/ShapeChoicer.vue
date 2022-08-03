@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, watch } from "vue";
+import { computed, watch } from "vue";
 import { useStore } from "vuex";
 
 import { SUSPENDED } from "@/utils/constans";
@@ -30,7 +30,7 @@ const totalLength = computed({
 
 // Shape
 const updateShape = (value) => store.dispatch("shape/updateShape", value);
-const resetShape = () => updateShape(null);
+const resetShape = () => store.dispatch("shape/resetShape");
 
 const shape = computed({
   get() {
@@ -39,21 +39,6 @@ const shape = computed({
   set(value) {
     updateShape(value);
   },
-});
-// const sidesFromStore = computed({
-//   get() {
-//     return store.state.shape.sides;
-//   },
-//   set(value) {
-//     store.dispatch("shape/updateSides", value);
-//   },
-// });
-
-onMounted(() => {
-  // if (shape.value) {
-  //   const { sides } = SHAPE[shape.value];
-  //   !sidesFromStore.value && (sidesFromStore.value = sides);
-  // }
 });
 
 watch(

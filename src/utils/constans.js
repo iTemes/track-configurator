@@ -16,242 +16,404 @@ export const SHAPE_SQUARE = "shape-square";
 export const STRETCH_CEILING = "stretch-ceiling";
 export const RECESSED = "recessed";
 export const EXTERNAL_CONTROL = "external-control";
+export const MIN_SUPPLY = 86;
 
 /* Наименования БП для корзины */
 export const POWER_SUPPLY = {
-  surface_supply: [
+  "integrated-control": [
+    {
+      name: "INF POWER SUPPLY 86W-48 BK",
+      color: "black",
+      value: 86,
+      id: 4758,
+    },
+    {
+      name: "INF POWER SUPPLY 86W-48 WH",
+      color: "white",
+      value: 86,
+      id: 7352,
+    },
+    {
+      name: "INF POWER SUPPLY 100W BK",
+      color: "black",
+      value: 100,
+      id: 5634,
+    },
+    {
+      name: "INF POWER SUPPLY 100W WH",
+      color: "white",
+      value: 100,
+      id: 7154,
+    },
+    {
+      name: "INF POWER SUPPLY 250W BK",
+      color: "black",
+      value: 250,
+      id: 7351,
+    },
+    {
+      name: "INF POWER SUPPLY 250W WH",
+      color: "white",
+      value: 250,
+      id: 7353,
+    },
+  ],
+  "external-control": [
     {
       name: "ИП 100 Вт",
-      color: "default",
+      color: "black",
       value: 100,
       id: 8556,
     },
     {
       name: "ИП 250 Вт",
-      color: "default",
+      color: "black",
       value: 250,
       id: 7408,
     },
     {
       name: "ИП 400 Вт",
-      color: "default",
+      color: "black",
       value: 400,
       id: 4288,
     },
     {
       name: "ИП 500 Вт",
-      color: "default",
+      color: "black",
       value: 500,
       id: 4289,
     },
     {
       name: "ИП 960 Вт",
-      color: "default",
+      color: "black",
       value: 960,
       id: 4044,
-    },
-  ],
-  flex_supply: [
-    {
-      name: "ИП 100 Вт",
-      color: "default",
-      value: 100,
-      id: 8556,
-    },
-    {
-      name: "ИП 250 Вт",
-      color: "default",
-      value: 250,
-      id: 7408,
-    },
-    {
-      name: "ИП 400 Вт",
-      color: "default",
-      value: 400,
-      id: 4288,
-    },
-    {
-      name: "ИП 500 Вт",
-      color: "default",
-      value: 500,
-      id: 4289,
-    },
-    {
-      name: "ИП 960 Вт",
-      color: "default",
-      value: 960,
-      id: 4044,
-    },
-  ],
-  track_supply: [
-    {
-      name: "AUR POWER SUPPLY 200W-48 DALI",
-      color: "auroom",
-      value: 200,
-      id: 12011,
-    },
-    {
-      name: "AUR POWER SUPPLY 200W-48 DALI",
-      color: "black",
-      value: 200,
-      id: 12113,
-    },
-  ],
-  ceiling_supply: [
-    {
-      name: "AUR POWER BOX 150W",
-      color: "auroom",
-      value: 150,
-      id: 7430,
-    },
-    {
-      name: "AUR POWER BOX 240W",
-      color: "auroom",
-      value: 240,
-      id: 7091,
-    },
-    {
-      name: "AUR POWER BOX 100W",
-      color: "black",
-      value: 100,
-      id: 11660,
-    },
-    {
-      name: "AUR POWER BOX 240W",
-      color: "black",
-      value: 240,
-      id: 11659,
     },
   ],
 };
-
 // Аксессуары по типам встраивания
 export const ACCESSORIES_CART_ID = {
-  surface: {
-    auroom: {
-      track: {
-        name: "AUR TRACK 2500",
-        id: 7025,
-      },
-      corners: {
-        name: "AUR CON DUO BASE 50",
-        id: 8530,
-      },
-      total_suspension: {
-        "surface-50": {
-          name: "AUR CON BASE 50",
-          id: 8529,
-        },
-        "surface-100": {
-          name: "AUR CON BASE 100",
-          id: 8528,
-        },
-      },
-      surface_supply: {
-        "surface-50": {
-          name: "AUR POWER BASE 50",
-          id: 10366,
-        },
-        "surface-100": {
-          name: "AUR POWER BASE 100",
-          id: 10367,
-        },
-      },
-      flex_supply: {
-        "surface-50": {
-          name: "AUR POWER BASE",
-          id: 7028,
-        },
-        "surface-100": {
-          name: "AUR POWER BASE",
-          id: 7028,
-        },
-      },
-    },
+  recessed: {
     black: {
       track: {
-        name: "AUR BLACK TRACK 2500",
-        id: 11649,
+        name: "INF TRACK T51 BP DALI 2",
+        id: 8299,
       },
       corners: {
-        name: "AUR BLACK CON DUO BASE 50",
-        id: 11652,
+        name: "INF CORNER T51 BP DALI 2",
+        id: 11803,
       },
-      total_suspension: {
-        "surface-50": {
-          name: "AUR BLACK CON BASE 50",
-          id: 11651,
-        },
-        "surface-100": {
-          name: "AUR BLACK CON BASE 100",
-          id: 11650,
-        },
+      corner_connector: {
+        name: "INF CONNECTOR 90 BP DALI 2",
+        id: 11133,
       },
-      surface_supply: {
-        "surface-50": {
-          name: "AUR BLACK POWER BASE 50",
-          id: 11657,
-        },
-        "surface-100": {
-          name: "AUR BLACK POWER BASE 100",
-          id: 11656,
-        },
+      stubs: {
+        name: "CAP INF TRACK T51 BP",
+        id: 11813,
       },
-      flex_supply: {
-        "surface-50": {
-          name: "AUR POWER BASE",
-          id: 11655,
-        },
-        "surface-100": {
-          name: "AUR POWER BASE",
-          id: 11655,
-        },
+      total_connectors: {
+        name: "INF CONNECTOR 180 BP DALI 2",
+        id: 11132,
+      },
+      total_metalic_connectors: {
+        name: "INF CON 180",
+        id: 9984,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR BP DALI 2",
+        id: 11134,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
+      },
+    },
+    white: {
+      track: {
+        name: "INF TRACK T51 WD DALI 2",
+        id: 8300,
+      },
+      corners: {
+        name: "INF CORNER T51 WD DALI 2",
+        id: 11804,
+      },
+      corner_connector: {
+        name: "INF CONNECTOR 90 WP DALI 2",
+        id: 11136,
+      },
+      stubs: {
+        name: "CAP INF TRACK T51 WD",
+        id: 11814,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 WP DALI 2",
+        id: 11135,
+      },
+      total_metalic_connectors: {
+        name: "INF CON 180",
+        id: 9984,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR WP DALI 2",
+        id: 11137,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
+      },
+    },
+  },
+  surface: {
+    black: {
+      track: {
+        name: "INF TRACK C54 BP DALI 2",
+        id: 8301,
+      },
+      corners: {
+        name: "INF CORNER C54 BP DALI 2",
+        id: 11799,
+      },
+      corner_connector: {
+        name: "INF CONNECTOR 90 BP DALI 2",
+        id: 11133,
+      },
+      stubs: {
+        name: "CAP INF TRACK C54 BP",
+        id: 11811,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 BP DALI 2",
+        id: 11132,
+      },
+      total_metalic_connectors: {
+        name: "INF CON C54 180",
+        id: 11807,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR BP DALI 2",
+        id: 11134,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
+      },
+    },
+    white: {
+      track: {
+        name: "INF CORNER C54 WD DALI 2",
+        id: 8302,
+      },
+      corners: {
+        name: "INF CORNER T51 WD DALI 2",
+        id: 11800,
+      },
+      corner_connector: {
+        name: "INF CONNECTOR 90 WP DALI 2",
+        id: 11136,
+      },
+      stubs: {
+        name: "CAP INF TRACK C54 WD",
+        id: 11812,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 BP DALI 2",
+        id: 11132,
+      },
+      total_metalic_connectors: {
+        name: "INF CON C54 180",
+        id: 11807,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR WP DALI 2",
+        id: 11137,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
       },
     },
   },
   suspended: {
-    auroom: {
-      track: {
-        name: "AUR TRACK 2500",
-        id: 7025,
-      },
-      total_suspension: {
-        default: {
-          name: "AUR TROS",
-          id: 9090,
-        },
-      },
-      corners: {
-        name: "AUR TROS DUO",
-        id: 9091,
-      },
-      flex_supply: {
-        default: {
-          name: "AUR POWER BASE",
-          id: 7028,
-        },
-      },
-    },
     black: {
       track: {
-        name: "AUR BLACK TRACK 2500",
-        id: 11649,
+        name: "INF TRACK C54 BP DALI 2",
+        id: 8301,
       },
       total_suspension: {
-        default: {
-          name: "AUR TROS",
-          id: 11653,
+        "suspension-tros": {
+          name: "ПОДВЕС SS.TUBE 4M.B",
+          id: 4642,
         },
+        "suspension-tros-hide": {
+          name: "SS.IN 4M.BK",
+          id: 5032,
+        },
+      },
+      suspension_clips: {
+        name: "INF CLIPS PDNT BP",
+        id: 11809,
       },
       corners: {
-        name: "AUR TROS DUO",
-        id: 11654,
+        name: "INF CORNER C54 BP DALI 2",
+        id: 11799,
       },
-      flex_supply: {
-        default: {
-          name: "AUR POWER BASE",
-          id: 11655,
+      corner_connector: {
+        name: "INF CONNECTOR 90 BP DALI 2",
+        id: 11133,
+      },
+      stubs: {
+        name: "CAP INF TRACK C54 BP",
+        id: 11811,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 BP DALI 2",
+        id: 11132,
+      },
+      total_metalic_connectors: {
+        name: "INF CON C54 180",
+        id: 11807,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR BP DALI 2",
+        id: 11134,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
+      },
+    },
+    white: {
+      track: {
+        name: "INF CORNER C54 WD DALI 2",
+        id: 8302,
+      },
+      total_suspension: {
+        "suspension-tros": {
+          name: "ПОДВЕС SS.TUBE 4M.W",
+          id: 4688,
         },
+        "suspension-tros-hide": {
+          name: "SS.IN 4M.WH",
+          id: 5031,
+        },
+      },
+      suspension_clips: {
+        name: "INF CLIPS PDNT WD",
+        id: 11810,
+      },
+      corners: {
+        name: "INF CORNER T51 WD DALI 2",
+        id: 11800,
+      },
+      corner_connector: {
+        name: "INF CONNECTOR 90 WP DALI 2",
+        id: 11136,
+      },
+      stubs: {
+        name: "CAP INF TRACK C54 WD",
+        id: 11812,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 WP DALI 2",
+        id: 11135,
+      },
+      total_metalic_connectors: {
+        name: "INF CON C54 180",
+        id: 11807,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR WP DALI 2",
+        id: 11137,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
+      },
+    },
+  },
+  "stretch-ceiling": {
+    black: {
+      track: {
+        name: "INF TRACK C54 BP DALI 2",
+        id: 8301,
+      },
+      total_container_for_tracks: {
+        name: "CANAL INF STC5857 BK",
+        id: 6203,
+      },
+      canal_caps: {
+        name: "CAP CANAL INF STC5857",
+        id: 6397,
+      },
+      corners: {
+        name: "INF CORNER C54 BP DALI 2",
+        id: 11799,
+      },
+      corner_connector: {
+        name: "INF CONNECTOR 90 BP DALI 2",
+        id: 11133,
+      },
+      stubs: {
+        name: "CAP INF TRACK DALI 2",
+        id: 6963,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 BP DALI 2",
+        id: 11132,
+      },
+      total_metalic_connectors: {
+        name: "INF CON 180",
+        id: 9984,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR BP DALI 2",
+        id: 11134,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
+      },
+    },
+    white: {
+      track: {
+        name: "INF CORNER C54 WD DALI 2",
+        id: 8302,
+      },
+      total_container_for_tracks: {
+        name: "CANAL INF STC5857 BK",
+        id: 6203,
+      },
+      canal_caps: {
+        name: "CAP CANAL INF STC5857",
+        id: 6397,
+      },
+      corners: {
+        name: "INF CORNER T51 WD DALI 2",
+        id: 11800,
+      },
+      corner_connector: {
+        name: "INF CONNECTOR 90 WP DALI 2",
+        id: 11136,
+      },
+      stubs: {
+        name: "CAP INF TRACK DALI 2",
+        id: 6963,
+      },
+      total_connectors: {
+        name: "INF CONNECTOR 180 WP DALI 2",
+        id: 11135,
+      },
+      total_metalic_connectors: {
+        name: "INF CON 180",
+        id: 9984,
+      },
+      is_power_adaptor: {
+        name: "INF POWER CONNECTOR WP DALI 2",
+        id: 11137,
+      },
+      is_smart_light: {
+        name: "INF SMART LIGHT",
+        id: 10521,
       },
     },
   },
