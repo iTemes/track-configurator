@@ -1,14 +1,17 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 
 import PageTemplateVue from "./general/PageTemplate/PageTemplate.vue";
 import PageFooter from "./general/PageFooter/PageFooter.vue";
 import ShapeChoicerVue from "@/components/ShapeChoicer/ShapeChoicer.vue";
 import TrackBoard from "@/components/TrackBoard/TrackBoard.vue";
+import TableResult from "@/components/TableResult/TableResult.vue";
 
 import { SHAPE_SQUARE, SUSPENDED } from "@/utils/constans";
 
+const router = useRouter();
 const store = useStore();
 
 const systemMounting = computed(() => store.state.system.systemParams.mounting);
@@ -54,6 +57,27 @@ const nextStep = computed(() => {
     ([, value]) => value.side_total_tracks
   );
 });
+
+const resetStep = () => {
+  const sidesKeys = Object.keys(sidesFromStore.value);
+  console.log("sidesKeys", sidesKeys);
+  sidesKeys.forEach((side) => {
+    sidesFromStore.value[side].tracks = [];
+    sidesFromStore.value[side].side_total_length = 0;
+    sidesFromStore.value[side].side_total_tracks = 0;
+  });
+
+  store.dispatch("shape/updateSides", null);
+  store.dispatch("shape/updateShape", null);
+  store.dispatch("shape/updateLength", 0);
+
+  store.dispatch("shape/setShapeOnStorage");
+};
+
+const pushNext = () => {
+  store.dispatch("shape/setShapeOnStorage");
+  router.push("/thirdstep");
+};
 </script>
 <template>
   <PageTemplateVue>
@@ -73,26 +97,14 @@ const nextStep = computed(() => {
           </router-link>
         </p>
 
-        <TableResult
-          v-if="false"
-          :show="isAddTrackEnable"
-          :total-container-for-tracks="totalContainerForTracks"
-          :total-suspension="totalSuspension"
-          :corners="corners"
-          :flex-connectors="flexConnectors"
-          :total-connectors="totalConnectors"
-          :total-metalic-connectors="totalMetalicConnectors"
-          :stubs="stubs"
-          :is-smart-light="isSmartLight"
-          :is-power-adaptor="isPowerAdaptor"
-        />
+        <TableResult :show="isAddTrackEnable" />
       </div>
     </template>
     <template #footer>
       <PageFooter
         :enable-next="nextStep"
         @reset-step="resetStep"
-        link="/thirdstep"
+        @push-next="pushNext"
       />
     </template>
   </PageTemplateVue>

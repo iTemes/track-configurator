@@ -35,7 +35,6 @@ const sizeModal = ref(null);
 const sidesFromStore = computed(() => store.state.shape.sides);
 const shape = computed(() => store.state.shape.shape);
 
-// Length system
 const totalLength = computed({
   get() {
     return store.state.shape.totalLength;
@@ -55,6 +54,10 @@ const handleSelectTab = (selectedTab) => {
 
 const enterTrackSize = () => {
   state.customSizeModal.show();
+};
+
+const updatecustomValue = ({ target: { value } }) => {
+  state.customValue = value > TRACK_SIZE ? TRACK_SIZE : +value;
 };
 
 function calcSideTracksCount(trackLenght) {
@@ -83,8 +86,6 @@ function handleAddTrackButton(side, event) {
   //   });
   // }, 400);
 }
-// TODO CUSTOM TRACK
-//eslint-disable-next-line
 function handleAddCustomTrack(side, trackSize) {
   console.log("add track to side", trackSize);
   let tracksCount = Math.floor(trackSize / TRACK_SIZE);
@@ -100,9 +101,6 @@ function handleAddCustomTrack(side, trackSize) {
   addTrackToSide(side, trackSize);
   state.customSizeModal.hide();
 }
-const updatecustomValue = ({ target: { value } }) => {
-  state.customValue = value > TRACK_SIZE ? TRACK_SIZE : +value;
-};
 function configTrack(side, trackLenght) {
   const sideToConfig = sidesFromStore.value[side];
   const newTrack = {

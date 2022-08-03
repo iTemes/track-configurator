@@ -1,20 +1,13 @@
 <script setup>
-import { useRouter } from "vue-router";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
-const router = useRouter();
 
-const props = defineProps({
+defineProps({
   enableNext: {
     type: Boolean,
     default: false,
-  },
-  link: {
-    type: String,
-    requared: true,
-    default: "/",
   },
   resetStepEnalbe: {
     type: Boolean,
@@ -28,7 +21,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["resetStep"]);
+const emit = defineEmits(["resetStep", "pushNext"]);
 
 const systemColor = computed(() => store.state.system.systemParams.color);
 const systemMounting = computed(() => store.state.system.systemParams.mounting);
@@ -38,7 +31,8 @@ const systemControlPlace = computed(
 
 const pushTo = (evt) => {
   evt.preventDefault();
-  router.push(props.link);
+
+  emit("pushNext");
 };
 
 const resetStep = () => {

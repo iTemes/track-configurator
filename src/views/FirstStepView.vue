@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 
 import PageTemplateVue from "./general/PageTemplate/PageTemplate.vue";
 import PageFooter from "./general/PageFooter/PageFooter.vue";
@@ -8,6 +9,7 @@ import FormFieldSet from "@/components/Form/FormFieldSet/FormFieldSet.vue";
 
 import { START_IMAGE_PATH } from "@/utils/constans";
 
+const router = useRouter();
 const store = useStore();
 
 const formFields = [
@@ -97,6 +99,7 @@ const nextStep = computed(() => {
 });
 
 const resetStep = () => store.dispatch("system/resetSystemParams");
+const pushNext = () => router.push("/secondStep");
 </script>
 
 <template>
@@ -130,6 +133,7 @@ const resetStep = () => store.dispatch("system/resetSystemParams");
       <PageFooter
         :enable-next="nextStep"
         @reset-step="resetStep"
+        @push-next="pushNext"
         link="/secondStep"
       />
     </template>

@@ -13,6 +13,9 @@ export const HOR_TYPE = "HOR";
 export const HOR_TYPE_REVERS = "HOR-REVERS";
 export const SUSPENDED = "suspended";
 export const SHAPE_SQUARE = "shape-square";
+export const STRETCH_CEILING = "stretch-ceiling";
+export const RECESSED = "recessed";
+
 /* Наименования БП для корзины */
 export const POWER_SUPPLY = {
   surface_supply: [

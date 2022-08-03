@@ -62,8 +62,6 @@ onMounted(() => {
     state.stubs = stubs;
     state.corners = corners;
     !sidesFromStore.value && (sidesFromStore.value = sides);
-
-    // state.currentSide = Object.keys(sidesFromStore.value)[0];
   }
 });
 
@@ -76,11 +74,9 @@ watch(
     sidesFromStore.value = sides;
     state.corners = corners;
     state.stubs = stubs;
-
-    // eslint-disable-next-line prefer-destructuring
-    // state.currentSide = Object.keys(sidesFromStore.value)[0];
-
     totalLength.value = 0;
+
+    store.dispatch("shape/setShapeOnStorage");
   }
 );
 </script>
