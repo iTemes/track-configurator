@@ -75,7 +75,7 @@ const resetStep = () => {
           @click="pushTo($event)"
           :disabled="!enableNext"
         >
-          {{ $t("message.continue") }}
+          {{ $t("message.continue") }} - {{ enableNext }}
         </button>
       </div>
       <slot name="content" />

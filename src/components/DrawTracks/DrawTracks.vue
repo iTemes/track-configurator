@@ -5,7 +5,6 @@ import { useStore } from "vuex";
 import SearchProductsList from "@/components/SearchProductList/SearchProductList.vue";
 
 import { SVG } from "@svgdotjs/svg.js";
-import smoothscroll from "smoothscroll-polyfill";
 import { Tooltip } from "bootstrap";
 import { v4 as uuidv4 } from "uuid";
 
@@ -427,9 +426,7 @@ function trackClickHandler({ currentTarget }) {
   } = currentTarget;
 
   setTimeout(() => {
-    console.log("state.tracks[title][index]", state.tracks[title][index]);
     state.currentTrack = state.tracks[title][index];
-    console.log("state.currentTrack", state.currentTrack);
   }, 200);
   // setTimeout(() => {
   //   const refTotrack = sideProducts.value?.offsetTop;
@@ -449,7 +446,6 @@ function searchTrackLight() {
   } else state.enableRelatedList = true;
 }
 function openAllTrackLights() {
-  console.log("openAllTrackLights", openAllTrackLights);
   state.enableProductList = true;
   state.enableRelatedList = false;
 }
@@ -534,8 +530,6 @@ function closeFilters() {
 
 onMounted(() => {
   initDraw();
-
-  smoothscroll.polyfill();
 });
 </script>
 

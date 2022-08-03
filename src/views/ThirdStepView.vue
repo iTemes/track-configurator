@@ -1,10 +1,9 @@
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive, computed, ref, onMounted } from "vue";
 import { useStore } from "vuex";
-// import { SVG } from "@svgdotjs/svg.js";
-// import { v4 as uuidv4 } from "uuid";
-// import smoothscroll from "smoothscroll-polyfill";
-// import { Modal } from "bootstrap";
+
+import smoothscroll from "smoothscroll-polyfill";
+import { Modal } from "bootstrap";
 
 import { POWER_SUPPLY, MIN_SUPPLY } from "../utils/constans";
 
@@ -18,6 +17,8 @@ const state = reactive({
   conFigError: false,
   powerError: false,
   showResult: false,
+  sharedModal: null,
+  sharedEmail: "",
 });
 
 const isNoSides = computed(() => !store.state.shape.sides);
@@ -59,19 +60,80 @@ const powerSupply = computed(() => {
       return powerSupValue;
     }
   }
-  // if (this.systemPower > powerSupValue) {
-  //   createToast(
-  //     {
-  //       name: "Предупреждение",
-  //       text: "Превышена допустимая максимальная мощность системы для встроенного блока питания. Необходимо уменьшить кол-во светильников или выбрать внешний блок питания на первом шаге",
-  //       autohide: false,
-  //       alert: true,
-  //     },
-  //     this.toasts
-  //   );
-  //   return 250;
-  // }
+
   return powerSupValue;
+});
+
+const nextStep = computed(() => {
+  if (!addedSubproducts.value.length || state.powerError) {
+    return false;
+  }
+  return true;
+});
+
+const configurationUrl = computed(() => {
+  const locationKey = "key";
+  return `/?config_key=${locationKey}`;
+});
+
+const tableResult = ref(null);
+const sharedEmailInput = ref(null);
+const sharedModal = ref(null);
+
+function finishConfig() {
+  state.showResult = true;
+
+  setTimeout(() => {
+    const refToTable = tableResult.value.offsetTop;
+    window.scrollTo({
+      top: refToTable,
+      behavior: "smooth",
+    });
+  }, 600);
+
+  // TODO POST CONFIG TO SERVER
+}
+function printTable() {
+  setTimeout(() => {
+    window.print();
+  }, 450);
+}
+function shareConfig() {
+  state.sharedModal.show();
+}
+function checkValidityInput(evt) {
+  evt.target.setCustomValidity("");
+}
+function postMail(obj) {
+  console.log("obj", obj);
+}
+function sendEmail() {
+  const validity = sharedEmailInput.value.checkValidity();
+  if (validity) {
+    const putEmailObject = {
+      config_key: configurationUrl,
+      target_email: state.sharedEmail,
+      object_configurator: this.postConfigObject,
+    };
+
+    postMail(putEmailObject);
+
+    state.sharedModal.hide();
+  } else {
+    sharedEmailInput.value.focus();
+    sharedEmailInput.value.setCustomValidity(
+      "Неправильный формат email адреса"
+    );
+  }
+}
+async function buildOrder(evt) {
+  evt.preventDefault();
+}
+
+onMounted(() => {
+  smoothscroll.polyfill();
+
+  state.sharedModal = new Modal(sharedModal.value);
 });
 </script>
 
@@ -113,9 +175,9 @@ const powerSupply = computed(() => {
             </p>
           </div>
         </div>
-        <DrawTracks :showResult="showResult" :powerSupply="powerSupply" />
+        <DrawTracks :showResult="state.showResult" :powerSupply="powerSupply" />
 
-        <TableResult ref="tableResult" :show="showResult" />
+        <TableResult ref="tableResult" :show="state.showResult" />
         <div v-if="false && qrCode">
           <img
             class="qr-code-img"
@@ -128,7 +190,6 @@ const powerSupply = computed(() => {
 
         <!-- Modal -->
         <div
-          v-if="false"
           ref="sharedModal"
           class="modal fade"
           id="sharedModal"
@@ -190,7 +251,7 @@ const powerSupply = computed(() => {
                     <input
                       @input="checkValidityInput"
                       ref="sharedEmailInput"
-                      v-model="sharedEmail"
+                      v-model="state.sharedEmail"
                       type="email"
                       class="form-control"
                       id="floatingInput"
@@ -225,23 +286,24 @@ const powerSupply = computed(() => {
 
     <template #footer>
       <PageFooter
-        v-if="false"
         :enable-next="nextStep"
         :reset-step-enalbe="false"
-        @push_next="finishConfig"
-        :finished="showResult"
+        @push-next="finishConfig"
+        :finished="state.showResult"
       >
-        <div v-if="showResult">
-          <button @click.prevent="printTable" class="btn btn-outline-dark">
-            Печать
-          </button>
-          <button @click.prevent="shareConfig" class="btn btn-outline-dark">
-            Поделиться
-          </button>
-          <button @click.prevent="buildOrder" class="btn btn-dark">
-            Заказать
-          </button>
-        </div>
+        <template #content>
+          <div v-if="state.showResult">
+            <button @click.prevent="printTable" class="btn btn-outline-dark">
+              Печать
+            </button>
+            <button @click.prevent="shareConfig" class="btn btn-outline-dark">
+              Поделиться
+            </button>
+            <button @click.prevent="buildOrder" class="btn btn-dark">
+              Заказать
+            </button>
+          </div>
+        </template>
       </PageFooter>
     </template>
   </PageTemplateVue>

@@ -11,7 +11,6 @@ const loading = computed(() => store.state.products.loading);
 const productList = computed(() => store.state.products.productList);
 
 const getProductsList = () => {
-  console.log("start fetch dispatch");
   store.dispatch("products/getProducts");
 };
 

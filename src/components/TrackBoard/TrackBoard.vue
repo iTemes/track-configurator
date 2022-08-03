@@ -87,7 +87,6 @@ function handleAddTrackButton(side, event) {
   // }, 400);
 }
 function handleAddCustomTrack(side, trackSize) {
-  console.log("add track to side", trackSize);
   let tracksCount = Math.floor(trackSize / TRACK_SIZE);
   const tracksCut = trackSize % TRACK_SIZE;
 
