@@ -76,6 +76,7 @@ const resetStep = () => {
 
 const pushNext = () => {
   store.dispatch("shape/setShapeOnStorage");
+  store.dispatch("shape/setAccsessoriesToStorage");
   router.push("/thirdstep");
 };
 </script>

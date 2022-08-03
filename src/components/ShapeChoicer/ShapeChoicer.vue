@@ -1,15 +1,8 @@
 <script setup>
-import { computed, onMounted, reactive, watch } from "vue";
+import { computed, onMounted, watch } from "vue";
 import { useStore } from "vuex";
 
-import { SHAPE, MIN_SIZE, SUSPENDED } from "@/utils/constans";
-
-const state = reactive({
-  corners: 0,
-  stubs: 0,
-  customValue: null,
-  minSize: MIN_SIZE,
-});
+import { SUSPENDED } from "@/utils/constans";
 
 const store = useStore();
 
@@ -47,22 +40,20 @@ const shape = computed({
     updateShape(value);
   },
 });
-const sidesFromStore = computed({
-  get() {
-    return store.state.shape.sides;
-  },
-  set(value) {
-    store.dispatch("shape/updateSides", value);
-  },
-});
+// const sidesFromStore = computed({
+//   get() {
+//     return store.state.shape.sides;
+//   },
+//   set(value) {
+//     store.dispatch("shape/updateSides", value);
+//   },
+// });
 
 onMounted(() => {
-  if (shape.value) {
-    const { corners, sides, stubs } = SHAPE[shape.value];
-    state.stubs = stubs;
-    state.corners = corners;
-    !sidesFromStore.value && (sidesFromStore.value = sides);
-  }
+  // if (shape.value) {
+  //   const { sides } = SHAPE[shape.value];
+  //   !sidesFromStore.value && (sidesFromStore.value = sides);
+  // }
 });
 
 watch(
@@ -70,10 +61,8 @@ watch(
   (newShape) => {
     if (!newShape) return;
 
-    const { corners, sides, stubs } = SHAPE[newShape];
-    sidesFromStore.value = sides;
-    state.corners = corners;
-    state.stubs = stubs;
+    // const { sides } = SHAPE[newShape];
+    // sidesFromStore.value = sides;
     totalLength.value = 0;
 
     store.dispatch("shape/setShapeOnStorage");

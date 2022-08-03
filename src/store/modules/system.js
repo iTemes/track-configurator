@@ -6,6 +6,8 @@ import {
   UPDATE_SUSPENSION_TYPE,
 } from "../mutation-types";
 
+import { EXTERNAL_CONTROL } from "@/utils/constans";
+
 const state = {
   systemParams: {
     color: null,
@@ -16,7 +18,11 @@ const state = {
 };
 
 // getters
-const getters = {};
+const getters = {
+  isPowerAdaptor(state) {
+    return state.systemParams.controlPlace === EXTERNAL_CONTROL ? 1 : 0;
+  },
+};
 
 // mutations
 const mutations = {

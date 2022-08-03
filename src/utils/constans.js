@@ -15,6 +15,7 @@ export const SUSPENDED = "suspended";
 export const SHAPE_SQUARE = "shape-square";
 export const STRETCH_CEILING = "stretch-ceiling";
 export const RECESSED = "recessed";
+export const EXTERNAL_CONTROL = "external-control";
 
 /* Наименования БП для корзины */
 export const POWER_SUPPLY = {
