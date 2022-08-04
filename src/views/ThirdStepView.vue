@@ -5,7 +5,8 @@ import { useStore } from "vuex";
 import smoothscroll from "smoothscroll-polyfill";
 import { Modal } from "bootstrap";
 
-import { POWER_SUPPLY, MIN_SUPPLY } from "../utils/constans";
+import { POWER_SUPPLY, MIN_SUPPLY } from "@/utils/constans";
+import { getMockQrCodeUrlFromServer } from "@/utils/mocks";
 
 import TableResult from "@/components/TableResult/TableResult.vue";
 import PageTemplateVue from "./general/PageTemplate/PageTemplate.vue";
@@ -14,11 +15,15 @@ import DrawTracks from "@/components/DrawTracks/DrawTracks.vue";
 
 const store = useStore();
 const state = reactive({
+  qrCode: null,
+  keyTolink: null,
+  configKeyFromHash: null,
   conFigError: false,
   powerError: false,
   showResult: false,
   sharedModal: null,
   sharedEmail: "",
+  postConfigObject: null,
 });
 
 const isNoSides = computed(() => !store.state.shape.sides);
@@ -26,6 +31,12 @@ const totalTracks = computed(() => store.getters["shape/totalTracks"]);
 const controlPlaceFromStore = computed(
   () => store.state.system.systemParams.controlPlace
 );
+const mountingFromStore = computed(
+  () => store.state.system.systemParams.mounting
+);
+const shapeFromStore = computed(() => store.state.shape.shape);
+const sidesFromStore = computed(() => store.state.shape.sides);
+const accsessoriesFromStore = computed(() => store.state.shape.accsessories);
 const colorFromStore = computed(() => store.state.system.systemParams.color);
 const addedSubproducts = computed(() => store.state.products.addedSubproducts);
 
@@ -40,7 +51,6 @@ const systemPower = computed(() => {
   });
   return power;
 });
-
 const powerSupply = computed(() => {
   let powerSupValue = MIN_SUPPLY;
   let powerSupList = POWER_SUPPLY[controlPlaceFromStore.value];
@@ -63,17 +73,12 @@ const powerSupply = computed(() => {
 
   return powerSupValue;
 });
-
-const nextStep = computed(() => {
-  if (!addedSubproducts.value.length || state.powerError) {
-    return false;
-  }
-  return true;
-});
-
+const nextStep = computed(
+  () => addedSubproducts.value.length && !state.powerError
+);
 const configurationUrl = computed(() => {
-  const locationKey = "key";
-  return `/?config_key=${locationKey}`;
+  const locationKey = state.keyTolink || state.configKeyFromHash;
+  return `/thirdStep?config_key=${locationKey}`;
 });
 
 const tableResult = ref(null);
@@ -85,6 +90,7 @@ function finishConfig() {
 
   setTimeout(() => {
     const refToTable = tableResult.value.offsetTop;
+    console.log("refToTable", refToTable, tableResult.value);
     window.scrollTo({
       top: refToTable,
       behavior: "smooth",
@@ -92,6 +98,24 @@ function finishConfig() {
   }, 600);
 
   // TODO POST CONFIG TO SERVER
+  const configDetails = {
+    control_place: controlPlaceFromStore.value,
+    system_color: colorFromStore.value,
+    system_mounting: mountingFromStore.value,
+  };
+  const appData = {
+    accsessories: accsessoriesFromStore.value,
+    shape: shapeFromStore.value,
+    // eslint-disable-next-line comma-dangle
+    sides: sidesFromStore.value,
+    configDetails,
+  };
+
+  state.postConfigObject = { ...appData };
+
+  const response = postConfigToServer(state.postConfigObject);
+  state.qrCode = response.qrcode_url;
+  state.keyTolink = response.config_key;
 }
 function printTable() {
   setTimeout(() => {
@@ -107,13 +131,22 @@ function checkValidityInput(evt) {
 function postMail(obj) {
   console.log("obj", obj);
 }
+function postConfigToServer(configObject) {
+  console.log("Post config", configObject);
+  // TODO MOCK
+
+  return {
+    qrcode_url: getMockQrCodeUrlFromServer(),
+    config_key: "randomhashkey",
+  };
+}
 function sendEmail() {
   const validity = sharedEmailInput.value.checkValidity();
   if (validity) {
     const putEmailObject = {
       config_key: configurationUrl,
       target_email: state.sharedEmail,
-      object_configurator: this.postConfigObject,
+      object_configurator: state.postConfigObject,
     };
 
     postMail(putEmailObject);
@@ -128,6 +161,7 @@ function sendEmail() {
 }
 async function buildOrder(evt) {
   evt.preventDefault();
+  alert("Формирование корзины");
 }
 
 onMounted(() => {
@@ -175,9 +209,11 @@ onMounted(() => {
             </p>
           </div>
         </div>
+
         <DrawTracks :showResult="state.showResult" :powerSupply="powerSupply" />
 
         <TableResult ref="tableResult" :show="state.showResult" />
+
         <div v-if="false && qrCode">
           <img
             class="qr-code-img"
@@ -293,13 +329,19 @@ onMounted(() => {
       >
         <template #content>
           <div v-if="state.showResult">
-            <button @click.prevent="printTable" class="btn btn-outline-dark">
+            <button
+              @click.prevent="printTable"
+              class="btn btn-outline-dark mx-2"
+            >
               Печать
             </button>
-            <button @click.prevent="shareConfig" class="btn btn-outline-dark">
+            <button
+              @click.prevent="shareConfig"
+              class="btn btn-outline-dark mx-2"
+            >
               Поделиться
             </button>
-            <button @click.prevent="buildOrder" class="btn btn-dark">
+            <button @click.prevent="buildOrder" class="btn btn-dark mx-2">
               Заказать
             </button>
           </div>

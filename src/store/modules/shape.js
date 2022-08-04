@@ -27,6 +27,7 @@ const state = {
   corners: 0,
   stubs: 0,
   isSmartLight: false,
+  accsessories: null,
 };
 
 // getters
@@ -137,6 +138,8 @@ const actions = {
       is_smart_light: state.isSmartLight,
       is_power_adaptor: rootGetters["system/isPowerAdaptor"],
     };
+
+    state.accsessories = { ...accsessoriesObject };
 
     const stringifyAccsessories = JSON.stringify(accsessoriesObject);
     sessionStorage.setItem("accessories", stringifyAccsessories);

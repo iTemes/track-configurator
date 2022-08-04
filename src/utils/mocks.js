@@ -9016,4 +9016,8 @@ const fetchProductsList = () => {
   });
 };
 
+export const getMockQrCodeUrlFromServer = () => {
+  return "https://www.centrsvet.ru/expand_settings/api/saver_configurator/?config_key=35e6707573690fff29bbdeb4eeaedf9b&qrcode=jpeg";
+};
+
 export default fetchProductsList;
