@@ -379,7 +379,8 @@ function createLightCircle(
     patternUnits: "objectBoundingBox",
   });
   lightCircleItem.fill(pattern);
-  pattern.image(`https://st.centrsvet.ru/40x40_fit_90/${imagePath}`).attr({
+
+  pattern.image(imagePath).attr({
     width: 40,
     height: 40,
     x: 0,
