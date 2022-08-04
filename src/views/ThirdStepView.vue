@@ -81,7 +81,7 @@ const configurationUrl = computed(() => {
   return `/thirdStep?config_key=${locationKey}`;
 });
 
-const tableResult = ref(null);
+const tableResultRef = ref(null);
 const sharedEmailInput = ref(null);
 const sharedModal = ref(null);
 
@@ -89,8 +89,8 @@ function finishConfig() {
   state.showResult = true;
 
   setTimeout(() => {
-    const refToTable = tableResult.value.offsetTop;
-    console.log("refToTable", refToTable, tableResult.value);
+    const refToTable = tableResultRef?.value?.resultTable?.offsetTop;
+
     window.scrollTo({
       top: refToTable,
       behavior: "smooth",
@@ -106,7 +106,6 @@ function finishConfig() {
   const appData = {
     accsessories: accsessoriesFromStore.value,
     shape: shapeFromStore.value,
-    // eslint-disable-next-line comma-dangle
     sides: sidesFromStore.value,
     configDetails,
   };
@@ -212,7 +211,7 @@ onMounted(() => {
 
         <DrawTracks :showResult="state.showResult" :powerSupply="powerSupply" />
 
-        <TableResult ref="tableResult" :show="state.showResult" />
+        <TableResult ref="tableResultRef" :show="state.showResult" />
 
         <div v-if="false && qrCode">
           <img

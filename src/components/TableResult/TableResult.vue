@@ -1,7 +1,9 @@
 <script setup>
 import { useStore } from "vuex";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+
+import { TRACK_SIZE } from "@/utils/constans";
 
 const store = useStore();
 const { t } = useI18n();
@@ -17,15 +19,36 @@ const totalConnectors = computed(() => store.getters["shape/totalConnectors"]);
 const totalMetalicConnectors = computed(
   () => store.getters["shape/totalMetalicConnectors"]
 );
-
+const corners = computed(() => store.state.shape.corners);
+const flexConnectors = computed(() => store.getters["shape/flexConnectors"]);
+const stubs = computed(() => store.state.shape.stubs);
+const isPowerAdaptor = computed(() => store.getters["system/isPowerAdaptor"]);
 const totalSuspension = computed(() => store.getters["shape/totalSuspension"]);
-// TODO
-const corners = 0;
-const flexConnectors = 0;
-const stubs = 0;
-const isPowerAdaptor = false;
-const subproducts = [];
-// END TODO
+
+const subproducts = computed(() => {
+  const preparedSubproudct = store.state.products.addedSubproducts.reduce(
+    (acc, item) => {
+      if (acc[item.id]) {
+        item.count = acc[item.id].count + 1;
+        acc[item.id] = item;
+
+        return acc;
+      }
+      item.count = 1;
+      acc[item.id] = item;
+
+      return acc;
+    },
+    {}
+  );
+  return Object.values(preparedSubproudct);
+});
+
+const resultTable = ref(null);
+defineExpose({
+  resultTable,
+});
+
 defineProps({
   show: {
     type: [Boolean, String],
@@ -34,12 +57,12 @@ defineProps({
 });
 
 const calcTrackCountOnSide = (side) => {
-  const sideTrackCount = +(side.side_total_length / 2500).toFixed(1);
+  const sideTrackCount = +(side.side_total_length / TRACK_SIZE).toFixed(1);
   return sideTrackCount;
 };
 </script>
 <template>
-  <section v-if="show" class="form-group result-table">
+  <section v-if="show" ref="resultTable" class="form-group result-table">
     <h3 class="form-head mb-5">
       {{ t("resultTable.result") }}
     </h3>
