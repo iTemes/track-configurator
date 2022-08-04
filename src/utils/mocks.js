@@ -224,13 +224,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_pndt_0730wb_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_pndt_0730wb_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf25_locus_p1_.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf25_locus_p1_.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/INF25.LOCUS P1_INSTR.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/INF25.LOCUS P1_INSTR.pdf",
         name: "Инструкция PDF",
         size: 1020817,
       },
@@ -494,13 +494,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_pndt_1830wb_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_pndt_1830wb_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf25_locus_p2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf25_locus_p2.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/INF25.LOCUS P2_INSTR.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/INF25.LOCUS P2_INSTR.pdf",
         name: "Инструкция PDF",
         size: 1021618,
       },
@@ -764,13 +764,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_aero_bb_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_aero_bb_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_aero_newq.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_aero_newq.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_aero_1530_24_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_aero_1530_24_instr.pdf",
         name: "Инструкция PDF",
         size: 1038754,
       },
@@ -1030,13 +1030,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_aero_wb_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_aero_wb_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_aero_newq.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_aero_newq.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_aero_1530_24_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_aero_1530_24_instr.pdf",
         name: "Инструкция PDF",
         size: 1038754,
       },
@@ -1306,9 +1306,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conuso_pdnt_063050_dali_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conuso_pdnt_063050_dali_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conuso_pdnt_063050_dali_bd.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conuso_pdnt_063050_dali_bd.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_kr_conuso_pdnt_063050_dali_bd/",
@@ -1423,9 +1423,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conuso_pdnt_063050_dali_kp_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conuso_pdnt_063050_dali_kp_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conuso_pdnt_063050_dali_bd.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conuso_pdnt_063050_dali_bd.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_kr_conuso_pdnt_063050_dali_kp/",
@@ -1672,9 +1672,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conusx_pdnt_183015_dali_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conusx_pdnt_183015_dali_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conusx_pdnt_183015_dali_bd.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conusx_pdnt_183015_dali_bd.svg",
     files: [],
     ostatok: 2,
     absolute_url: "/catalog/subproduct/inf_kr_conusx_pdnt_183015_dali_bd/",
@@ -1785,9 +1785,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conusx_pdnt_183015_dali_kp_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_conusx_pdnt_183015_dali_kp_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conusx_pdnt_183015_dali_bd.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_conusx_pdnt_183015_dali_bd.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_kr_conusx_pdnt_183015_dali_kp/",
@@ -2048,13 +2048,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430bd_dali2_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430bd_dali2_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_corner_line_1030_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_corner_line_1030_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1417061,
       },
@@ -2326,9 +2326,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430wd_dali2_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430wd_dali2_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
     files: [],
     ostatok: 318,
     absolute_url: "/catalog/subproduct/inf_corner_1430wd_dali2/",
@@ -2597,13 +2597,13 @@ const results = [
       "цветовая температура": "4000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430bd_dali2_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430bd_dali2_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_corner_line_1040_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_corner_line_1040_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1416702,
       },
@@ -2875,9 +2875,9 @@ const results = [
       "цветовая температура": "4000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430wd_dali2_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_corner_1430wd_dali2_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_corner_1430bd_dali2.svg",
     files: [],
     ostatok: 189,
     absolute_url: "/catalog/subproduct/inf_corner_1440wd_dali2/",
@@ -3003,9 +3003,9 @@ const results = [
       "цветовая температура": "1800",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_derect_line_270_061820bd_dali/",
@@ -3311,9 +3311,9 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
     files: [],
     ostatok: 159,
     absolute_url: "/catalog/subproduct/inf_derect_line_270_062736bd_dali2/",
@@ -3623,13 +3623,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_270_0630_36_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_270_0630_36_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1407998,
       },
@@ -3942,13 +3942,13 @@ const results = [
       "цветовая температура": "4000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_272_6_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_direct_line_270_new.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_270_0640_36_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_270_0640_36_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1408211,
       },
@@ -4086,9 +4086,9 @@ const results = [
       "цветовая температура": "1800",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_spot_line_800_201820_bd_dali/",
@@ -4407,9 +4407,9 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
     files: [],
     ostatok: 84,
     absolute_url: "/catalog/subproduct/inf_spot_line_800_202736_bd_dali2/",
@@ -4736,13 +4736,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_800_2030_36_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_800_2030_36_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1404286,
       },
@@ -5072,13 +5072,13 @@ const results = [
       "цветовая температура": "4000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_spot_line_800_2030bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_spot_line_800.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_800_2040_36_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_direct_line_800_2040_36_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1404475,
       },
@@ -5344,9 +5344,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_drop_pdnt_183050_dali_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_drop_pdnt_183050_dali_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_drop_pdnt_183050_dali_bd.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_drop_pdnt_183050_dali_bd.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_kr_drop_pdnt_183050_dali_bd/",
@@ -5457,9 +5457,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_drop_pdnt_183050_dali_kp_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_kr_drop_pdnt_183050_dali_kp_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_drop_pdnt_183050_dali_bd.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_kr_drop_pdnt_183050_dali_bd.svg",
     files: [],
     ostatok: 0,
     absolute_url: "/catalog/subproduct/inf_kr_drop_pdnt_183050_dali_kp/",
@@ -5707,13 +5707,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/infinity_finelineb_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/infinity_finelineb_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/svg/shema_fine_line_inf.svg",
+      "https://www.centrsvet.ru/media/uploads/svg/shema_fine_line_inf.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_fine_line_1530_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_fine_line_1530_instr.pdf",
         name: "Инструкция PDF",
         size: 1027819,
       },
@@ -5900,13 +5900,13 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_liana_2230_dali2_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_liana_2230_dali2_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_sweep_2230_dali2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_sweep_2230_dali2.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_1600_2430_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_1600_2430_instr.pdf",
         name: "Инструкция PDF",
         size: 726661,
       },
@@ -6153,13 +6153,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_liana_2230_dali2_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_liana_2230_dali2_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/shema_inf_sweep_2230_dali2.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/shema_inf_sweep_2230_dali2.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_1600_2430_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_1600_2430_instr.pdf",
         name: "Инструкция PDF",
         size: 726661,
       },
@@ -6343,13 +6343,13 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_sweep_4827_dali2_bd_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_sweep_4827_dali2_bd_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/inf_sweep_4827_dali2_shema.svg.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/inf_sweep_4827_dali2_shema.svg.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_3000_4827_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_3000_4827_instr.pdf",
         name: "Инструкция PDF",
         size: 1206361,
       },
@@ -6533,13 +6533,13 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_sweep_8030_dali2_bd_400.png",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_sweep_8030_dali2_bd_400.png",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/inf_sweep_8030_dali2_shema.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/inf_sweep_8030_dali2_shema.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_5000_8030_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_5000_8030_instr.pdf",
         name: "Инструкция PDF",
         size: 1275107,
       },
@@ -6787,13 +6787,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_sweep_8030_dali2_bd_400.png",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_sweep_8030_dali2_bd_400.png",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/inf_sweep_8030_dali2_shema.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/inf_sweep_8030_dali2_shema.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_5000_8030_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_freelight_5000_8030_instr.pdf",
         name: "Инструкция PDF",
         size: 1275107,
       },
@@ -7091,13 +7091,13 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1027_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1027_instr.pdf",
         name: "Инструкция PDF",
         size: 951383,
       },
@@ -7403,9 +7403,9 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [],
     ostatok: 692,
     absolute_url: "/catalog/subproduct/inf_line_400_1027_bd_dali2/",
@@ -7704,13 +7704,13 @@ const results = [
       "цветовая температура": "2700",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400w_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400w_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1027_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1027_instr.pdf",
         name: "Инструкция PDF",
         size: 951383,
       },
@@ -8016,13 +8016,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1030_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1030_instr.pdf",
         name: "Инструкция PDF",
         size: 952681,
       },
@@ -8340,13 +8340,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1030_bd_dali_2_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1030_bd_dali_2_instr.pdf",
         name: "Инструкция PDF",
         size: 1375240,
       },
@@ -8640,13 +8640,13 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400w_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400w_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [
       {
         type: "PDF",
-        url: "https://www.centrsvet.ruhttps:/www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1030_instr.pdf",
+        url: "https:///www.centrsvet.ruhttps://www.centrsvet.ru/media/uploads/p.d.f/inf_line_400_1030_instr.pdf",
         name: "Инструкция PDF",
         size: 952681,
       },
@@ -8964,9 +8964,9 @@ const results = [
       "цветовая температура": "3000",
     },
     icon_image1:
-      "https:/www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400w_1030_400.jpg",
+      "https://www.centrsvet.ru/media/uploads/icon_400_400/inf_25_line_400w_1030_400.jpg",
     install_image:
-      "https:/www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
+      "https://www.centrsvet.ru/media/uploads/shemu/schema_inf25_line400.svg",
     files: [],
     ostatok: 2974,
     absolute_url: "/catalog/subproduct/inf_line_400_1030_wd_dali2/",
@@ -9017,7 +9017,7 @@ const fetchProductsList = () => {
 };
 
 export const getMockQrCodeUrlFromServer = () => {
-  return "https://www.centrsvet.ru/expand_settings/api/saver_configurator/?config_key=35e6707573690fff29bbdeb4eeaedf9b&qrcode=jpeg";
+  return "https:///www.centrsvet.ru/expand_settings/api/saver_configurator/?config_key=35e6707573690fff29bbdeb4eeaedf9b&qrcode=jpeg";
 };
 
 export default fetchProductsList;
