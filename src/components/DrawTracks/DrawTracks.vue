@@ -429,13 +429,13 @@ function trackClickHandler({ currentTarget }) {
   setTimeout(() => {
     state.currentTrack = state.tracks[title][index];
   }, 200);
-  // setTimeout(() => {
-  //   const refTotrack = sideProducts.value?.offsetTop;
-  //   window.scrollTo({
-  //     top: refTotrack,
-  //     behavior: "smooth",
-  //   });
-  // }, 600);
+  setTimeout(() => {
+    const refTotrack = sideProducts.value?.offsetTop;
+    window.scrollTo({
+      top: refTotrack,
+      behavior: "smooth",
+    });
+  }, 600);
 }
 function tracksRemoveActive() {
   const tracks = document.querySelectorAll(".g-track-wrapper");

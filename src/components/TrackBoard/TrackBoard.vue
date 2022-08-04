@@ -26,11 +26,13 @@ defineProps({
 
 const state = reactive({
   currentSide: null,
+  currentTabIndex: 0,
   customValue: 0,
   customSizeModal: null,
 });
 
 const sizeModal = ref(null);
+const tracksOverview = ref([]);
 
 const sidesFromStore = computed(() => store.state.shape.sides);
 const shape = computed(() => store.state.shape.shape);
@@ -50,6 +52,7 @@ const handleSelectTab = (selectedTab) => {
     selectedTab.tab.index
   ];
   state.currentSide = selectedTabObject;
+  state.currentTabIndex = selectedTab.tab.index;
 };
 
 const enterTrackSize = () => {
@@ -73,18 +76,18 @@ function calcSideConnectors(sideTracks) {
 }
 function handleAddTrackButton(side, event) {
   const dataLength = +event.currentTarget.dataset.length;
-  // const scrollContainer = this.$refs.tracksOverview[0];
+  const scrollContainer = tracksOverview.value[state.currentTabIndex];
 
   addTrackToSide(side, dataLength);
-  // const scrollPosition = scrollContainer.scrollWidth + dataLength / 10;
+  const scrollPosition = scrollContainer.scrollWidth + dataLength / 10;
 
-  // setTimeout(() => {
-  //   scrollContainer.scroll({
-  //     top: 0,
-  //     left: scrollPosition,
-  //     behavior: "smooth",
-  //   });
-  // }, 400);
+  setTimeout(() => {
+    scrollContainer.scroll({
+      top: 0,
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+  }, 400);
 }
 function handleAddCustomTrack(side, trackSize) {
   let tracksCount = Math.floor(trackSize / TRACK_SIZE);
